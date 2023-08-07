@@ -33,7 +33,7 @@ plot.NDVI(dat)
 Q1: This plot suggests that Fynbos greenness (NDVI) as observed from satellite saturates with time since fire. Why do you think it saturates rather than increasing linearly with time?
 
 >*Answer 1:*
-
+The saturation is likely a result of areas carrying capacity being reached, while also being a result of the nutrient limited area. Only a certain greenness threshhold can most likely be reached. 
 <br>
 
 ### 2. Fit models using Non-linear Least Squares (NLS)
@@ -100,7 +100,7 @@ Lots more parameters...
 Q2: How do the estimates for the common parameters compare?
 
 >*Answer 2:*
-
+The estimates for the common parameters do not deviate much from each other however the lambda parameter in the full model is more significant. 
 <br>
 
 ### 3. Compare NLS models using ANOVA
@@ -118,11 +118,12 @@ anova(fit_negexp, fit_negexpS)
 Q3: Which model is better?
 
 >*Answer 3:*
+Model 2
 
 Q4: How many degrees of freedom are there in this ANOVA and why (i.e. what are they)?
 
 >*Answer 4:*
-
+2
 <br>
 
 ### 4. Fit models using Maximum Likelihood Estimation (MLE)
@@ -215,7 +216,7 @@ AIC_simple - AIC_full
 Q5: Is there a preferred model and if so, which one?
 
 >*Answer 5:*
-
+Yes, the full model which has a much lower AIC weight as compared to the simple model 
 <br>
 
 The nice thing about AIC is that the models you compare do not have to be nested like they do for ANOVA, as long as the data are the same. There are a few other constraints however... 
@@ -233,5 +234,5 @@ You'll notice that these are completely different to the AICs for the MLE models
 Q6: Why is it not okay to compare the AIC of these NLS models with the AIC of the MLE models? Hint: type `?AIC` into the R console and do some reading.
 
 >*Answer 6:*
-
+The AIC of MLE and NLS models should not be compared as the AIC theory requires that log likelihood of the data has been maximized. Also our NLS models are non linear. 
 <br>
